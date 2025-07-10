@@ -13,7 +13,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  static final String tokenizationKey = 'sandbox_8hxpnkht_kzdtzv2btm4p7s5j';
+  static final String tokenizationKey = 'sandbox_x65773jc_yhgk5ghs4hkpgq4f';
 
   void showNonce(BraintreePaymentMethodNonce nonce) {
     showDialog(
@@ -116,8 +116,7 @@ class _MyAppState extends State<MyApp> {
               onPressed: () async {
                 final request = BraintreePayPalRequest(
                   amount: null,
-                  billingAgreementDescription:
-                      'I hereby agree that flutter_braintree is great.',
+                  billingAgreementDescription: 'I hereby agree that flutter_braintree is great.',
                   displayName: 'Your Company',
                 );
                 final result = await Braintree.requestPaypalNonce(
