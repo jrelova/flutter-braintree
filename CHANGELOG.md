@@ -1,3 +1,10 @@
+## 5.0.0
+
+- **BREAKING:** Raised minimum iOS deployment target to 15.0.
+- **FIX:** Resolved Android crash during PayPal vault flow.
+- **FEAT:** Added `android:exported="true"` to AndroidManifest for Android 12+ compatibility.
+- **CHORE:** Updated iOS Braintree SDKs to `BraintreeDropIn 9.14.0` and compatible core SDK versions (`~> 5.27.0`).
+
 ## 4.0.0
 
 - Upgrade Drop-In SDK to 6.13.0
