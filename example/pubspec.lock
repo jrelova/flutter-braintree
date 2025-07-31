@@ -17,6 +17,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.2"
+  braintree_flutter_plus:
+    dependency: "direct dev"
+    description:
+      path: ".."
+      relative: true
+    source: path
+    version: "5.0.0"
   characters:
     dependency: transitive
     description:
@@ -62,13 +69,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_braintree:
-    dependency: "direct dev"
-    description:
-      path: ".."
-      relative: true
-    source: path
-    version: "4.0.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter

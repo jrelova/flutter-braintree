@@ -1,5 +1,5 @@
-name: flutter_braintree_example
-description: Demonstrates how to use the flutter_braintree plugin.
+name: braintree_flutter_plus_example
+description: Demonstrates how to use the braintree_flutter_plus plugin.
 version: 0.6.0
 publish_to: 'none'
 
@@ -17,7 +17,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_braintree:
+  braintree_flutter_plus:
     path: ../
 
 flutter:

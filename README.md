@@ -1,16 +1,23 @@
-# Braintree for Flutter
+# Braintree Flutter Plus
 
-A Flutter plugin that wraps the native [Braintree SDKs](https://www.braintreepayments.com/features/seamless-checkout/drop-in-ui).
+An enhanced Flutter plugin that wraps the native [Braintree SDKs](https://www.braintreepayments.com/features/seamless-checkout/drop-in-ui) with the latest updates and improvements.
 Unlike other plugins, this plugin not only lets you start Braintree's native Drop-in UI, but also allows you to create your own custom Flutter UI with Braintree functionality.
+
+## ✨ What's New in Plus
+
+- **iOS 15.0+ Support**: Updated to latest Braintree SDKs (BraintreeDropIn 9.14.0)
+- **Android 12+ Compatibility**: Fixed crashes and added proper exported flags
+- **PayPal Vault Flow**: Resolved critical Android crashes
+- **Enhanced Stability**: Updated Cardinal SDK and core dependencies
 
 ## Installation
 
-Add flutter_braintree to your `pubspec.yaml` file:
+Add braintree_flutter_plus to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
   ...
-  flutter_braintree: <version>
+  braintree_flutter_plus: ^5.0.0
 ```
 
 ### Android
