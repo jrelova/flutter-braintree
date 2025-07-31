@@ -19,7 +19,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.example.braintree_flutter_plus
+        package: com.example.flutter_braintree
         pluginClass: FlutterBraintreePlugin
       ios:
         pluginClass: FlutterBraintreePlugin
