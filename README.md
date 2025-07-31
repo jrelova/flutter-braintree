@@ -1,7 +1,21 @@
 # Braintree Flutter Plus
 
+[![pub package](https://img.shields.io/pub/v/braintree_flutter_plus.svg)](https://pub.dev/packages/braintree_flutter_plus)
+[![GitHub](https://img.shields.io/github/license/adlyyy4/flutter-braintree)](https://github.com/adlyyy4/flutter-braintree/blob/main/LICENSE)
+
 An enhanced Flutter plugin that wraps the native [Braintree SDKs](https://www.braintreepayments.com/features/seamless-checkout/drop-in-ui) with the latest updates and improvements.
 Unlike other plugins, this plugin not only lets you start Braintree's native Drop-in UI, but also allows you to create your own custom Flutter UI with Braintree functionality.
+
+## 🔄 About This Fork
+
+This is an **actively maintained fork** of the original `flutter_braintree` package by [pikaju](https://github.com/pikaju/flutter-braintree), which is no longer being maintained. We've taken over development to provide:
+
+- 🛠️ **Critical bug fixes** and security updates
+- 📱 **Modern platform support** (iOS 15+, Android 12+)
+- 🔄 **Regular maintenance** and dependency updates
+- 📦 **Published as `braintree_flutter_plus`** on pub.dev
+
+> **Migration Note**: If you're using the original `flutter_braintree`, simply replace it with `braintree_flutter_plus` in your `pubspec.yaml` - the API remains the same!
 
 ## ✨ What's New in Plus
 
