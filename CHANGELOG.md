@@ -1,3 +1,7 @@
+## 5.0.3
+
+- **FIX:** Fixed iOS Swift header import path in FlutterBraintreePlugin.m to match package name `braintree_flutter_plus`.
+
 ## 5.0.2
 
 - **FIX:** Fixed iOS podspec name mismatch - renamed podspec file and updated s.name to match package name `braintree_flutter_plus`.

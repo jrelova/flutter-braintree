@@ -1,5 +1,5 @@
 #import "FlutterBraintreePlugin.h"
-#import <flutter_braintree/flutter_braintree-Swift.h>
+#import <braintree_flutter_plus/braintree_flutter_plus-Swift.h>
 
 @implementation FlutterBraintreePlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
