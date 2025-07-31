@@ -1,3 +1,7 @@
+## 5.0.1
+
+- **FIX:** Fixed Android package name mismatch in pubspec.yaml that was causing plugin initialization errors.
+
 ## 5.0.0
 
 - **BREAKING:** Raised minimum iOS deployment target to 15.0.
