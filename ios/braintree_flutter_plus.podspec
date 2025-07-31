@@ -2,8 +2,8 @@
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
 #
 Pod::Spec.new do |s|
-  s.name             = 'flutter_braintree'
-  s.version          = '1.0.0'
+  s.name             = 'braintree_flutter_plus'
+  s.version          = '5.0.2'
   s.summary          = 'A Flutter plugin for Braintree'
   s.description      = <<-DESC
   A Flutter plugin that wraps the native Braintree Drop-In UI SDKs.
