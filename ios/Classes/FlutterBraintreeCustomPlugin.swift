@@ -77,6 +77,7 @@ public class FlutterBraintreeCustomPlugin: BaseFlutterBraintreePlugin, FlutterPl
             let cardClient = BTCardClient(apiClient: client!)
             
             guard let cardRequestInfo = dict(for: "request", in: call) else {return}
+            let amount = cardRequestInfo["amount"] as? String
             
             let card = BTCard()
             card.number = cardRequestInfo["cardNumber"] as? String
@@ -86,7 +87,7 @@ public class FlutterBraintreeCustomPlugin: BaseFlutterBraintreePlugin, FlutterPl
             card.cardholderName = cardRequestInfo["cardholderName"] as? String
             
             cardClient.tokenizeCard(card) { (nonce, error) in
-                self.handleResult(nonce: nonce, error: error, flutterResult: result)
+                self.handleResult(nonce: nonce, error: error, flutterResult: result, amount: amount)
                 self.isHandlingResult = false
             }
         } else {
@@ -95,13 +96,17 @@ public class FlutterBraintreeCustomPlugin: BaseFlutterBraintreePlugin, FlutterPl
         }
     }
     
-    private func handleResult(nonce: BTPaymentMethodNonce?, error: Error?, flutterResult: FlutterResult) {
+    private func handleResult(nonce: BTPaymentMethodNonce?, error: Error?, flutterResult: FlutterResult, amount: String? = nil) {
         if error != nil {
             returnBraintreeError(result: flutterResult, error: error!)
         } else if nonce == nil {
             flutterResult(nil)
         } else {
-            flutterResult(buildPaymentNonceDict(nonce: nonce));
+            var nonceDict = buildPaymentNonceDict(nonce: nonce)
+            if let amount = amount {
+                nonceDict["amount"] = amount
+            }
+            flutterResult(nonceDict);
         }
     }
     

@@ -94,6 +94,7 @@ public class FlutterBraintreePlugin implements FlutterPlugin, ActivityAware, Met
       intent.putExtra("expirationYear", (String) request.get("expirationYear"));
       intent.putExtra("cvv", (String) request.get("cvv"));
       intent.putExtra("cardholderName", (String) request.get("cardholderName"));
+      intent.putExtra("amount", (String) request.get("amount"));
       activity.startActivityForResult(intent, CUSTOM_ACTIVITY_REQUEST_CODE);
     } else if (call.method.equals("requestPaypalNonce")) {
       Intent intent = new Intent(activity, FlutterBraintreeCustom.class);
@@ -124,7 +125,12 @@ public class FlutterBraintreePlugin implements FlutterPlugin, ActivityAware, Met
         if (resultCode == Activity.RESULT_OK) {
           String type = data.getStringExtra("type");
           if (type.equals("paymentMethodNonce")) {
-            activeResult.success(data.getSerializableExtra("paymentMethodNonce"));
+            String amount = data.getStringExtra("amount");
+            Map<String, Object> nonceMap = (Map<String, Object>) data.getSerializableExtra("paymentMethodNonce");
+            if (amount != null) {
+              nonceMap.put("amount", amount);
+            }
+            activeResult.success(nonceMap);
           } else {
             Exception error = new Exception("Invalid activity result type.");
             activeResult.error("error", error.getMessage(), null);

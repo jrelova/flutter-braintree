@@ -1,5 +1,7 @@
 package com.example.flutter_braintree;
 
+import java.io.Serializable;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -122,7 +124,8 @@ public class FlutterBraintreeCustom extends AppCompatActivity implements PayPalL
 
         Intent result = new Intent();
         result.putExtra("type", "paymentMethodNonce");
-        result.putExtra("paymentMethodNonce", nonceMap);
+        result.putExtra("paymentMethodNonce", (Serializable) nonceMap);
+        result.putExtra("amount", getIntent().getStringExtra("amount"));
         setResult(RESULT_OK, result);
         finish();
     }

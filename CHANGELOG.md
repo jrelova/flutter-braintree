@@ -1,3 +1,11 @@
+## 5.0.4
+
+*   **Feature**: Added an optional `amount` field to `BraintreeCreditCardRequest`.
+*   **Details**: This `amount` is returned with the `BraintreePaymentMethodNonce` result and can be used for display purposes in the UI (e.g., "You are about to pay $X.XX").
+*   **Important**: The `amount` passed on the client-side is for display only. The actual transaction amount must still be specified on the server-side when creating the transaction with the nonce. This maintains PCI compliance by ensuring the server controls the final charge.
+*   **Fix**: Resolved Android build error related to missing `Serializable` import.
+*   **Fix**: Resolved iOS build error caused by an incorrect force-unwrap on a non-optional dictionary.
+
 ## 5.0.3
 
 - **FIX:** Fixed iOS Swift header import path in FlutterBraintreePlugin.m to match package name `braintree_flutter_plus`.

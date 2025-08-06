@@ -80,11 +80,9 @@ class BraintreeDropInRequest {
         if (amount != null) 'amount': amount,
         'collectDeviceData': collectDeviceData,
         'requestThreeDSecureVerification': requestThreeDSecureVerification,
-        if (googlePaymentRequest != null)
-          'googlePaymentRequest': googlePaymentRequest!.toJson(),
+        if (googlePaymentRequest != null) 'googlePaymentRequest': googlePaymentRequest!.toJson(),
         if (paypalRequest != null) 'paypalRequest': paypalRequest!.toJson(),
-        if (applePayRequest != null)
-          'applePayRequest': applePayRequest!.toJson(),
+        if (applePayRequest != null) 'applePayRequest': applePayRequest!.toJson(),
         'venmoEnabled': venmoEnabled,
         'cardEnabled': cardEnabled,
         'paypalEnabled': cardEnabled,
@@ -136,7 +134,11 @@ class BraintreeCreditCardRequest {
     required this.expirationYear,
     required this.cvv,
     this.cardholderName,
+    required this.amount,
   });
+
+  ///
+  String amount;
 
   /// Number shown on the credit card.
   String cardNumber;
@@ -158,7 +160,8 @@ class BraintreeCreditCardRequest {
         'expirationMonth': expirationMonth,
         'expirationYear': expirationYear,
         'cvv': cvv,
-        'cardholderName': cardholderName
+        'cardholderName': cardholderName,
+        'amount': amount,
       };
 }
 
@@ -352,8 +355,7 @@ class BraintreeApplePayRequest {
 
   /// Converts this request object into a JSON-encodable format.
   Map<String, dynamic> toJson() => {
-        'paymentSummaryItems':
-            paymentSummaryItems.map((item) => item.toJson()).toList(),
+        'paymentSummaryItems': paymentSummaryItems.map((item) => item.toJson()).toList(),
         'currencyCode': currencyCode,
         'displayName': displayName,
         'countryCode': countryCode,

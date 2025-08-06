@@ -29,6 +29,11 @@ class _MyAppState extends State<MyApp> {
             Text('Type label: ${nonce.typeLabel}'),
             SizedBox(height: 16),
             Text('Description: ${nonce.description}'),
+            if (nonce.amount != null)
+              Padding(
+                padding: const EdgeInsets.only(top: 16),
+                child: Text('Amount: ${nonce.amount}'),
+              ),
           ],
         ),
       ),
@@ -70,17 +75,18 @@ class _MyAppState extends State<MyApp> {
                     billingAddressRequired: false,
                   ),
                   applePayRequest: BraintreeApplePayRequest(
-                      currencyCode: 'USD',
-                      supportedNetworks: [
-                        ApplePaySupportedNetworks.visa,
-                        ApplePaySupportedNetworks.masterCard,
-                        // ApplePaySupportedNetworks.amex,
-                        // ApplePaySupportedNetworks.discover,
-                      ],
-                      countryCode: 'US',
-                      merchantIdentifier: '',
-                      displayName: '',
-                      paymentSummaryItems: []),
+                    currencyCode: 'USD',
+                    supportedNetworks: [
+                      ApplePaySupportedNetworks.visa,
+                      ApplePaySupportedNetworks.masterCard,
+                      // ApplePaySupportedNetworks.amex,
+                      // ApplePaySupportedNetworks.discover,
+                    ],
+                    countryCode: 'US',
+                    merchantIdentifier: '',
+                    displayName: '',
+                    paymentSummaryItems: [],
+                  ),
                   paypalRequest: BraintreePayPalRequest(
                     amount: '4.20',
                     displayName: 'Example company',
@@ -101,6 +107,7 @@ class _MyAppState extends State<MyApp> {
                   expirationMonth: '12',
                   expirationYear: '2021',
                   cvv: '123',
+                  amount: '4.20',
                 );
                 final result = await Braintree.tokenizeCreditCard(
                   tokenizationKey,
