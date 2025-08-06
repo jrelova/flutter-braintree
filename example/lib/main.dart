@@ -3,6 +3,21 @@ import 'package:braintree_flutter_plus/braintree_flutter_plus.dart';
 
 void main() => runApp(
       MaterialApp(
+        theme: ThemeData(
+          brightness: Brightness.light,
+          colorScheme: const ColorScheme(
+            brightness: Brightness.light,
+            primary: Colors.black,
+            onPrimary: Colors.white,
+            secondary: Colors.white,
+            onSecondary: Colors.black,
+            error: Colors.red,
+            onError: Colors.white,
+            surface: Colors.white,
+            onSurface: Colors.black,
+          ),
+          splashColor: Colors.transparent,
+        ),
         home: MyApp(),
       ),
     );
@@ -148,6 +163,19 @@ class _MyAppState extends State<MyApp> {
                 }
               },
               child: Text('PAYPAL CHECKOUT FLOW'),
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                final result = await Braintree.showCreditCardForm(
+                  context,
+                  authorization: tokenizationKey,
+                  amount: '20.0',
+                );
+                if (result != null) {
+                  showNonce(result);
+                }
+              },
+              child: Text('SHOW CREDIT CARD DIALOG'),
             ),
           ],
         ),

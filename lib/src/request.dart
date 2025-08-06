@@ -1,3 +1,5 @@
+@Deprecated(
+    'The Drop-in SDK is deprecated and will be unsupported after July 14, 2026. Please build a custom UI and use `Braintree.tokenizeCreditCard()` or `Braintree.showCreditCardForm()` to continue processing payments.')
 class BraintreeDropInRequest {
   BraintreeDropInRequest({
     this.clientToken,

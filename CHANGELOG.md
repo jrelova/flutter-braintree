@@ -1,3 +1,16 @@
+## 5.0.5
+
+### Features
+- **New Custom UI for Credit Card Tokenization**: Introduced a customizable, full-screen credit card form as a modern replacement for the deprecated Drop-in UI.
+- **Navigation Helper**: Added `Braintree.showCreditCardForm()` to easily present the credit card form screen.
+
+### Fixes & Improvements
+- **Input Validation**: Added robust validation for card number, expiration date, and CVV fields to prevent submission errors.
+- **Card Number Formatting**: The card number field now automatically formats the input into groups of four digits for better readability.
+
+### Breaking Changes
+- **Deprecation of Drop-in**: `BraintreeDropInRequest` is now marked as deprecated. Developers should migrate to the new custom UI flow using `Braintree.showCreditCardForm()`.
+
 ## 5.0.4
 
 *   **Feature**: Added an optional `amount` field to `BraintreeCreditCardRequest`.

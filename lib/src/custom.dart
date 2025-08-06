@@ -1,11 +1,11 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'credit_card_from_screen.dart';
 import 'request.dart';
 import 'result.dart';
 
 class Braintree {
-  static const MethodChannel _kChannel =
-      const MethodChannel('flutter_braintree.custom');
+  static const MethodChannel _kChannel = const MethodChannel('flutter_braintree.custom');
 
   const Braintree._();
 
@@ -44,5 +44,21 @@ class Braintree {
     });
     if (result == null) return null;
     return BraintreePaymentMethodNonce.fromJson(result);
+  }
+
+  static Future<BraintreePaymentMethodNonce?> showCreditCardForm(
+    BuildContext context, {
+    required String authorization,
+    required String amount,
+  }) {
+    return Navigator.push<BraintreePaymentMethodNonce?>(
+      context,
+      MaterialPageRoute(
+        builder: (context) => CreditCardFormScreen(
+          authorization: authorization,
+          amount: amount,
+        ),
+      ),
+    );
   }
 }
